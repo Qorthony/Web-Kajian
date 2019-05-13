@@ -12,7 +12,7 @@
 </head>
 
 <body class="bg-gray">
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+    <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark">
         <a class="navbar-brand" href="#">Dakwah Center</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
             aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +25,7 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Kajian</a>
+                    <a class="nav-link" href="kajian.html">Kajian</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#testimoni">Tentang Kami</a>
@@ -88,7 +88,7 @@
         </a>
     </div>
     <!-- End Slider -->
-    <div class="container pt-5 pb-5">
+    <div id="content" class="container pt-5 pb-5">
         <div class="text-center">
             <h1 class="display-5 text-green">Kajian Terbaru</h1>
         </div>
@@ -137,27 +137,67 @@
     <div id="testimoni">
         <div class="dark-transparent text-white pt-5 pb-5">
             <div class="container text-center">
-                <img src="images/img2.jpg" width="300" height="300" alt="Founder" class="rounded-pill mt-5 mb-5">
+                <img src="images/pp.jpeg" width="300" height="300" alt="Founder" class="rounded-pill mt-5 mb-5">
                 <h3>Ahmad Qorthoni Nur Ardhi</h3>
+                <p class="text-content text-green">Founder DakwahCenter.id</p>
                 <div class="row">
                     <div class="col-sm-9 mx-auto">
                         <blockquote class="blockquote">
-                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
-                                erat a ante.</p>
+                            <p class="mb-0">Dakwah Center Adalah suatu platform bagi ummat. Dimana Dakwah center menjadi
+                                sarana sharing tentang kegiatan - kegiatan keislaman baik berupa kajian islam ataupun
+                                acara - acara tentang islam lainnya</p>
                         </blockquote>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
-
-
-    <section style="height:100vh" class="bg-green">
-
-    </section>
-
-
+    <div id="kontak" class="bg-dark text-white  pt-5 pb-3">
+        <div class="container">
+            <h1 class="display-5 text-green text-center">Kontak Kami</h1>
+            <div class="row pt-5 pb-3">
+                <div class="col-sm-4 ">
+                    <h3>Contact Person</h3>
+                    <div class="row mt-2 mb-2">
+                        <div class="col-sm-3">Email</div>
+                        <div class="col-sm-9">: Ahmad.qorthony@gmail.com</div>
+                    </div>
+                    <div class="row mt-2 mb-2">
+                            <div class="col-sm-3">No. HP</div>
+                            <div class="col-sm-9">: 088782654234</div>
+                        </div>
+                </div>
+                <div class="col-sm-8">
+                    <form action="https://formspree.io/ahmad.qorthony@gmail.com" method="POST">
+                        <div class="form-group row">
+                            <label for="Email" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control form-control-lg" id="Email" name="Email" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="Pertanyaan" class="col-sm-2 col-form-label">Pertanyaan</label>
+                            <div class="col-sm-10">
+                                    <textarea class="form-control" name="Pertanyaan" id="Pertanyaan" rows="10"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-primary">Kirim</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-green text-center pt-3 pb-3">
+        <div class="container">
+            <span class="text-dark">Copyright DakwahCenter.id 2019</span>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -168,6 +208,17 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script>
+        window.addEventListener('scroll',function () {
+            if (document.body.scrollTop>80||document.documentElement.scrollTop>document.getElementById('carouselExampleFade').offsetHeight) {
+                document.getElementById('navbar').classList.add('bg-green');    
+            }
+            else{
+                document.getElementById('navbar').classList.remove('bg-green');
+            }
+            
+        })
+    </script>
 </body>
 
 </html>
