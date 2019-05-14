@@ -12,8 +12,8 @@
 </head>
 
 <body class="bg-gray">
-    <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="#">Dakwah Center</a>
+    <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-green">
+        <a class="navbar-brand" href="index.html">Dakwah Center</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
             aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@
                     <a class="nav-link" href="#testimoni">Tentang Kami</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Kontak</a>
+                    <a class="nav-link" href="#kontak">Kontak</a>
                 </li>
             </ul>
 
@@ -100,7 +100,7 @@
                         <h5 class="card-title">Special title treatment</h5>
                         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <div class="text-center">
-                            <a href="#" class="btn btn-secondary">Go somewhere</a>
+                            <a href="single.html" class="btn btn-secondary">Go somewhere</a>
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                         <h5 class="card-title">Special title treatment</h5>
                         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <div class="text-center">
-                            <a href="#" class="btn btn-secondary">Go somewhere</a>
+                            <a href="single.html" class="btn btn-secondary">Go somewhere</a>
                         </div>
                     </div>
                 </div>
@@ -124,14 +124,14 @@
                         <h5 class="card-title">Special title treatment</h5>
                         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <div class="text-center">
-                            <a href="#" class="btn btn-secondary">Go somewhere</a>
+                            <a href="single.html" class="btn btn-secondary">Go somewhere</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="text-center">
-            <a href="" class="btn bg-green text-white">Lihat lebih lengkap -></a>
+            <a href="kajian.html" class="btn bg-green text-white">Lihat lebih lengkap -></a>
         </div>
     </div>
     <div id="testimoni">
@@ -163,25 +163,34 @@
                         <div class="col-sm-9">: Ahmad.qorthony@gmail.com</div>
                     </div>
                     <div class="row mt-2 mb-2">
-                            <div class="col-sm-3">No. HP</div>
-                            <div class="col-sm-9">: 088782654234</div>
-                        </div>
+                        <div class="col-sm-3">No. HP</div>
+                        <div class="col-sm-9">: 088782654234</div>
+                    </div>
+                    <div class="row mt-2 mb-2">
+                        <div class="col-sm-3">Instagram</div>
+                        <div class="col-sm-9">: @Qorthony</div>
+                    </div>
+                    <div class="row mt-2 mb-2">
+                        <div class="col-sm-3">Facebook</div>
+                        <div class="col-sm-9">: Qorthony</div>
+                    </div>
                 </div>
                 <div class="col-sm-8">
                     <form action="https://formspree.io/ahmad.qorthony@gmail.com" method="POST">
                         <div class="form-group row">
                             <label for="Email" class="col-sm-2 col-form-label">Email</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control form-control-lg" id="Email" name="Email" placeholder="Email">
+                                <input type="email" class="form-control form-control-lg" id="Email" name="Email"
+                                    placeholder="Email">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="Pertanyaan" class="col-sm-2 col-form-label">Pertanyaan</label>
                             <div class="col-sm-10">
-                                    <textarea class="form-control" name="Pertanyaan" id="Pertanyaan" rows="10"></textarea>
+                                <textarea class="form-control" name="Pertanyaan" id="Pertanyaan" rows="10"></textarea>
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
                             <div class="col-sm-2"></div>
                             <div class="col-sm-10">
@@ -209,14 +218,14 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script>
-        window.addEventListener('scroll',function () {
-            if (document.body.scrollTop>80||document.documentElement.scrollTop>document.getElementById('carouselExampleFade').offsetHeight) {
-                document.getElementById('navbar').classList.add('bg-green');    
+        window.addEventListener('scroll', function () {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > document.getElementById('carouselExampleFade').offsetHeight) {
+                document.getElementById('navbar').classList.add('bg-green');
             }
-            else{
+            else {
                 document.getElementById('navbar').classList.remove('bg-green');
             }
-            
+
         })
     </script>
 </body>

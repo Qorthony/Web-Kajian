@@ -4,6 +4,14 @@
 .bg-gray{
     background-color: #e6e6e6;
 }
+.btn-green{
+    background-color: #00a99d;
+    color: #fefefe;
+}
+.btn-green:hover{
+    background-color: #058f86;
+    color: #fefefe;
+}
 .text-green{
     color: #00a99d;
 }
@@ -34,4 +42,11 @@
 .dark-transparent{
     background-color: rgba(0, 0, 0,0.5);
     background-size: cover;
+}
+#hero{
+    background-image: url('images/img3.jpg');
+    background-size: cover;
+    background-position: top;
+    padding-top: 150px;
+    padding-bottom: 50px;
 }
