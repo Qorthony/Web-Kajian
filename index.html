@@ -92,43 +92,8 @@
         <div class="text-center">
             <h1 class="display-5 text-green">Kajian Terbaru</h1>
         </div>
-        <div class="row pt-5 pb-5">
-            <div class="col-sm-4">
-                <div class="card">
-                    <img src="images/img1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body bg-green text-white rounded">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <div class="text-center">
-                            <a href="single.html" class="btn btn-secondary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card">
-                    <img src="images/img1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body bg-green text-white rounded">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <div class="text-center">
-                            <a href="single.html" class="btn btn-secondary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card">
-                    <img src="images/img1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body bg-green text-white rounded">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <div class="text-center">
-                            <a href="single.html" class="btn btn-secondary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div id="kajian" class="row pt-5 pb-5">
+            
         </div>
         <div class="text-center">
             <a href="kajian.html" class="btn bg-green text-white">Lihat lebih lengkap -></a>
@@ -217,6 +182,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="data.js"></script>
     <script>
         window.addEventListener('scroll', function () {
             if (document.body.scrollTop > 80 || document.documentElement.scrollTop > document.getElementById('carouselExampleFade').offsetHeight) {
@@ -227,6 +193,35 @@
             }
 
         })
+        let konten = document.getElementById('kajian');
+        let data="";
+        function showData() {
+            data = "";
+            konten.innerHTML = "";
+            kajian.map(dt => {
+                if (dt.id<=3) {
+                    data +=
+                        `
+                <div class="col-sm-4 mt-3 mb-3">
+                <div class="card">
+                    <img src="images/img1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body bg-green text-white rounded">
+                        <h5 class="card-title">${dt.judul}</h5>
+                        <p class="card-text">Pembicara : ${dt.pembicara}</p>
+                        <p class="card-text">Tempat    : ${dt.tempat}</p>
+                        <p class="card-text">Tanggal   : ${dt.tanggal}</p>
+                        <div class="text-center">
+                            <a href="single.html" class="btn btn-secondary">Cek Deskripsi</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                `
+                }   
+            })
+            konten.insertAdjacentHTML('beforeend', data);
+        }
+        showData();
     </script>
 </body>
 

@@ -19,7 +19,7 @@ const kajian=[
         id:3,
         judul:"Pengajian Rutin Mingguan",
         tanggal:"30/7/2019",
-        tempat:"Masjid Istaqlal",
+        tempat:"Masjid Istiqlal",
         kota:"Jakarta Pusat",
         pembicara:"Ustad Abdul Somad"
     },

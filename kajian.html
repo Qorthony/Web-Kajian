@@ -49,7 +49,7 @@
                                 <input type="text" id="keyword" class="form-control">
                             </div>
                             <div class="col-sm-3">
-                                <input onclick="cari();" type="button" value="Cari"
+                                <input onclick="showData();" type="button" value="Cari"
                                     class="form-control btn btn-primary">
                             </div>
                         </div>
@@ -58,6 +58,7 @@
                             data-target="#exampleModal">
                             Filter Pencarian
                         </button>
+                        <button onclick="resetData();" class="btn btn-secondary">Reset</button>
 
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
@@ -72,12 +73,14 @@
                                     </div>
                                     <div class="modal-body">
                                         <label for="kota">Kota</label>
-                                        <select name="kota" id="kota" class="form-control"></select>
+                                        <select name="kota" id="kota" class="form-control">
+                                            <option value="" selected>ALL</option>
+                                        </select>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        <button type="button" class="btn btn-primary" onclick="showData();">Save changes</button>
                                     </div>
                                 </div>
                             </div>
@@ -91,7 +94,7 @@
 
     <div class="container ">
         <div id="kajian" class="row pt-5 pb-5">
-            
+
         </div>
     </div>
 
@@ -114,20 +117,36 @@
     <script>
         let kota = document.getElementById('kota');
         let keyword = document.getElementById('keyword');
-        let select = "";
+        let konten = document.getElementById('kajian');
+        let select = " ";
+        let data="";
 
         kajian.map(e => {
             select += "<option value='" + e.kota + "'>" + e.kota + "</option>";
         });
+
         kota.insertAdjacentHTML("beforeend", select);
 
+        keyword.addEventListener('keypress',function(e){
+            if (e.keyCode == 13) {
+                e.preventDefault();
+                showData();
+            }
+        })
+
+        function resetData() {
+            data = "";
+            konten.innerHTML = "";
+            kota.value="";
+        }
+
         function showData() {
-            let konten=document.getElementById('kajian');
-            let data = "";
-            konten.innerHTML="";
+            data = "";
+            konten.innerHTML = "";
             kajian.map(dt => {
-                data +=
-                    `
+                if (dt.judul.includes(keyword.value)&&dt.kota.includes(kota.value)) {
+                    data +=
+                        `
                 <div class="col-sm-4 mt-3 mb-3">
                 <div class="card">
                     <img src="images/img1.jpg" class="card-img-top" alt="...">
@@ -143,8 +162,10 @@
                 </div>
             </div>
                 `
+                }
+
             })
-            konten.insertAdjacentHTML('beforeend',data);
+            konten.insertAdjacentHTML('beforeend', data);
         }
 
         showData();
